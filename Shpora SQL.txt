@@ -8,7 +8,7 @@
 3. 	CREATE TABLE Users (UserId int NOT NULL AUTO INCREMENT, 
 	FirstName varchar(100) NOT NULL, 
 	LastName varchar(100) NOT NULL, 
-	City varchar(100), PRIMARY KEY(UserId); - AUTO INCREMENT автоматически создает значение первичного ключа каждый раз при добавлении новой записи.
+	City varchar(100), PRIMARY KEY(UserId); - Adding a new line, AUTO INCREMENT creates a value of the primary key automatically. 
 
 4. 	INSERT INTO months (id, name, days) VALUES (1, 'January', 31);
 
@@ -41,11 +41,11 @@
 	INNER JOIN owners 
 	ON owners.id = car_owners.id;
 
-14. 	SELECT MAX(realeased) FROM albums; - максимальное значение среди строк.
+14. 	SELECT MAX(realeased) FROM albums; - maximum value in a column.
 
-15. 	SELECT MIN(realeased) FROM albums; - минимальное значение среди строк.
+15. 	SELECT MIN(realeased) FROM albums; - minimum value in a column.
 
-16. 	SELECT AVG(age) FROM students; - среднее значение столбца.
+16. 	SELECT AVG(age) FROM students; - average value in a column.
 
 17.	SELECT AVG(Salary) FROM employees;
 
@@ -70,27 +70,27 @@
 
 25. 	DROP TABLE table_names;
 
-26. 	SELECT DISTINCT city FROM customers; - только уникальные значени€ (убирает все дубликаты).
+26. 	SELECT DISTINCT city FROM customers; - only unique values (remove all duplicates).
 
-27. 	SELECT name, surname, city FROM customers LIMIT 5; - первые 5 записей из таблицы.
+27. 	SELECT name, surname, city FROM customers LIMIT 5; - the first 5 lines from the table.
 
-28. 	SELECT name, surname, city FROM customers LIMIT 2, 10; - 10 записей начина€ с 2 ой строчки (запись треть€). (ѕерва€ строчка начинаетс€ всегда с 0).
+28. 	SELECT name, surname, city FROM customers LIMIT 2, 10; - the first 10 lines starting from the 2nd line ( the 1st line always starts from 0). 
 
 29. 	SELECT name FROM students 
 	UNION 
-	SELECT city FROM adress; - убирает любые существующие дубликаты.
+	SELECT city FROM adress; - remove all dublicates.
 
 30. 	SELECT name FROM students 
 	UNION ALL 
-	SELECT city FROM adress; - не убирает дублирующие строки.
+	SELECT city FROM adress; - all dublicates are in.
 
-31.	ALTER TABLE People ADD DataOfBirth int; - добавление нового столбца к таблице (¬се строки по умолчанию = NULL).
+31.	ALTER TABLE People ADD DataOfBirth int; - add a new column to a table (All valus are NULL).
 
 32.	ALTER TABLE Students ADD speciality varchar(50);
 
-33.	ALTER TABLE People DROP COLUMN DataOfBirth; - удаление столбца.
+33.	ALTER TABLE People DROP COLUMN DataOfBirth; - remove a column.
 
-34.	ALTER TABLE People CHANGE FirstName name varchar(100); - переименование столбца;
+34.	ALTER TABLE People CHANGE FirstName name varchar(100); - rename a column.
 
 35.	RENAME TABLE People TO Users;
 
@@ -109,7 +109,7 @@
 39.	SELECT * FROM customers WHERE id !=5;
 
 40.	SELECT * FROM customers 
-	WHERE id BETWEEN 3 AND 7; - выбирает все записи с id мужду 3 и 7.
+	WHERE id BETWEEN 3 AND 7; - choose all lines with id between 3 and 7.
 
 41.	SELECT FirstName, LastName, City FROM customers 
 	WHERE City = 'New York';
@@ -128,7 +128,7 @@
 	-------> = SELECT * FROM customers WHERE City IN ('NY', 'LA', 'Chicago');
 
 46.	SELECT * FROM customers 
-	WHERE City NOT IN ('NY', 'LA', 'Chicago'); - клиенты из этих городов будут исключеные.
+	WHERE City NOT IN ('NY', 'LA', 'Chicago'); - clients from THESE cities are removed.
 
 47.	SELECT name, state FROM customers 
 	WHERE state NOT IN ('CA', 'NY');
@@ -138,10 +138,10 @@
 	ORDER BY Salary DESK;
 
 49.	SELECT * FROM employees 
-	WHERE FirstName LIKE 'A%'; - начинаетс€ с буквы ј.
+	WHERE FirstName LIKE 'A%'; - starts with A.
 
 50.	SELECT * FROM employees 
-	WHERE FirstName LIKE '%s'; - заканчиваетс€ на букву s.
+	WHERE FirstName LIKE '%s'; - ends with s.
 
 51.	SELECT name, MIN(cost) FROM items 
 	WHERE name LIKE '%boxes oof frogs' AND seller_id IN(33,1,67);
